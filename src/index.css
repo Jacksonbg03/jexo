@@ -8,11 +8,15 @@
   --color-primary-hover: #d87b00;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base{
+  body{
+    padding: 0;
+    margin: 0;
+  }
+}
 
+* {
+  box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
 }
 
