@@ -20,6 +20,20 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
+::-webkit-scrollbar{
+  width: 8px !important;
+}
+
+::-webkit-scrollbar-thumb{
+  background: var(--color-primary) !important;
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-track{
+  background: #fff !important;
+}
+
 .cell {
   display: inline-block;
   width: 49%;
