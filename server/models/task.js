@@ -17,14 +17,14 @@ const taskSchema = new Schema({
     stage: {
         type: String,
         default: "todo",
-        enum: ["todo", "in-progress", "completed"],
+        enum: ["todo", "in progress", "completed"],
     },
     activities: [{
         type: {
             type: String,
             default: "assigned",
             enum: [
-                "assigned", "started", "in-progress", "bug", "completed", "commented"
+                "assigned", "started", "in progress", "bug", "completed", "commented"
             ],
         },
         activity: String,

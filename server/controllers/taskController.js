@@ -39,7 +39,7 @@ const createTask = asyncHandler(async (req, res) => {
       date,
       priority: priority.toLowerCase(),
       assets,
-      activities: activity,
+      activities: [activity],
       links: newLinks || [],
       description,
     });
@@ -80,7 +80,7 @@ const duplicateTask = asyncHandler(async (req, res) => {
 
     //alert users of the task
     let text = "New task has been assigned to you";
-    if (team.team?.length > 1) {
+    if (task.team?.length > 1) {
       text = text + ` and ${task.team?.length - 1} others.`;
     }
 
@@ -109,7 +109,7 @@ const duplicateTask = asyncHandler(async (req, res) => {
     newTask.links = task.links;
     newTask.priority = task.priority;
     newTask.stage = task.stage;
-    newTask.activities = activity;
+    newTask.activities = [activity];
     newTask.description = task.description;
 
     await newTask.save();
@@ -122,7 +122,7 @@ const duplicateTask = asyncHandler(async (req, res) => {
 
     res
       .status(200)
-      .json({ status: true, message: "Task duplicated successfully." });
+      .json({ status: true, message: "Task updated successfully." });
   } catch (error) {
     return res.status(500).json({ status: false, message: error.message });
   }
@@ -236,6 +236,7 @@ const createSubTask = asyncHandler(async (req, res) => {
 });
 
 const getTasks = asyncHandler(async (req, res) => {
+  console.log("SEARCH QUERY: ", req.query.search)
   const { userId, isAdmin } = req.user;
   const { stage, isTrashed, search } = req.query;
 
