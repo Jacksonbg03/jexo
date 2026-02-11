@@ -65,7 +65,7 @@ export function countTasksByStage(tasks) {
 
   tasks?.forEach((task) => {
     switch (task.stage.toLowerCase()) {
-      case "in progress":
+      case "in-progress":
         inProgressCount++;
         break;
       case "todo":

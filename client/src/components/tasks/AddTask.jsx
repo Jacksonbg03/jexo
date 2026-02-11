@@ -24,7 +24,7 @@ import Textbox from "../Textbox";
 import UserList from "./UsersSelect";
 
 const LISTS = ["TODO", "IN PROGRESS", "COMPLETED"];
-const PRIORITY = ["HIGH", "MEDIUM", "NORMAL", "LOW"];
+const PRIORITY = ["HIGH", "MEDIUM", "LOW"];
 
 const uploadedFileURLs = [];
 

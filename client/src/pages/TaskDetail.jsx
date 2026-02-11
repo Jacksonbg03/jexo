@@ -78,7 +78,7 @@ const TASKTYPEICON = {
       <MdOutlineDoneAll size={24} />
     </div>
   ),
-  "in progress": (
+  "in-progress": (
     <div className='w-8 h-8 flex items-center justify-center rounded-full bg-violet-600 text-white'>
       <GrInProgress size={16} />
     </div>
@@ -142,7 +142,6 @@ const Activities = ({ activity, id, refetch }) => {
       </div>
     );
   };
-
   return (
     <div className='w-full flex gap-10 2xl:gap-20 min-h-screen px-10 py-8 bg-white shadow rounded-md justify-between overflow-y-auto'>
       <div className='w-full md:w-1/2'>
@@ -150,7 +149,7 @@ const Activities = ({ activity, id, refetch }) => {
         <div className='w-full space-y-0'>
           {activity?.map((item, index) => (
             <Card
-              key={item.id}
+              key={item._id}
               item={item}
               isConnected={index < activity?.length - 1}
             />
@@ -347,7 +346,7 @@ const TaskDetail = () => {
                                     : "bg-amber-50 text-amber-600"
                                 }`}
                               >
-                                {el?.isCompleted ? "done" : "in progress"}
+                                {el?.isCompleted ? "done" : "in-progress"}
                               </span>
                             </div>
                             <p className='text-gray-700 pb-2'>{el?.title}</p>
