@@ -4,9 +4,11 @@ import { BsChevronExpand } from "react-icons/bs";
 import { MdCheck } from "react-icons/md";
 import { useGetTeamListsQuery } from "../../redux/slices/api/userApiSlice.js";
 import { getInitials } from "../../utils/index.js";
+import { useSelector } from "react-redux";
 
 export default function UserList({ team, setTeam }) {
-  const { data, isLoading } = useGetTeamListsQuery({ search: "" });
+  const search = useSelector((state) => state.ui.search);
+  const { data, isLoading } = useGetTeamListsQuery({ search: search});
   const [selectedUsers, setSelectedUsers] = useState([]);
 
   const handleChange = (el) => {

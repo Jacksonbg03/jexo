@@ -65,9 +65,9 @@ const ChangeTaskActions = ({ _id, stage }) => {
     },
     {
       label: "In Progress",
-      stage: "in-progress",
+      stage: "in progress",
       icon: <TaskColor className='bg-yellow-600' />,
-      onClick: () => changeHandler("in-progress"),
+      onClick: () => changeHandler("in progress"),
     },
     {
       label: "Completed",

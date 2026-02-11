@@ -50,6 +50,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
               name='title'
               label='Title'
               className='w-full rounded'
+              required={true}
               register={register("title", {
                 required: "Title is required!",
               })}
@@ -63,6 +64,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
                 name='date'
                 label='Task Date'
                 className='w-full rounded'
+                required={true}
                 register={register("date", {
                   required: "Date is required!",
                 })}
@@ -74,6 +76,7 @@ const AddSubTask = ({ open, setOpen, id }) => {
                 name='tag'
                 label='Tag'
                 className='w-full rounded'
+                required={true}
                 register={register("tag", {
                   required: "Tag is required!",
                 })}

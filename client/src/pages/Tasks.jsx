@@ -23,8 +23,7 @@ const TABS = [
 const Tasks = () => {
   const params = useParams();
   const { user } = useSelector((state) => state.auth);
-  const [searchParams] = useSearchParams();
-  const [searchTerm] = useState(searchParams.get("search") || "");
+  const searchTerm = useSelector((state) => state.ui.search);
 
   const [selected, setSelected] = useState(0);
   const [open, setOpen] = useState(false);
@@ -65,16 +64,14 @@ const Tasks = () => {
               <TaskTitle label='To Do' className={TASK_TYPE.todo} />
               <TaskTitle
                 label='In Progress'
-                className={TASK_TYPE["in-progress"]}
+                className={TASK_TYPE["in progress"]}
               />
               <TaskTitle label='Completed' className={TASK_TYPE.completed} />
             </div>
           )}
           {selected === 0 ? (
-            // <BoardView tasks={data?.tasks} />
             <BoardView tasks={data?.tasks} />
           ) : (
-            // <Table tasks={data?.tasks} />
             <Table tasks={data?.tasks} />
           )}
         </Tabs>

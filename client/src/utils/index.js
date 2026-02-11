@@ -41,7 +41,7 @@ export const PRIORITYSTYLES = {
 
 export const TASK_TYPE = {
     "todo": "bg-gray-500",
-    "in-progress": "bg-blue-600",
+    "in progress": "bg-blue-600",
     "completed": "bg-green-600"
 }
 
@@ -65,7 +65,7 @@ export function countTasksByStage(tasks) {
 
   tasks?.forEach((task) => {
     switch (task.stage.toLowerCase()) {
-      case "in-progress":
+      case "in progress":
         inProgressCount++;
         break;
       case "todo":

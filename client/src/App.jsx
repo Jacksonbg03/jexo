@@ -87,7 +87,7 @@ const App = () => {
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/tasks' element={<Tasks/>}/>
             <Route path='/completed/:status' element={<Tasks/>}/>
-            <Route path='/in-progress/:status' element={<Tasks/>}/>
+            <Route path='/in progress/:status' element={<Tasks/>}/>
             <Route path='/todo/:status' element={<Tasks/>}/>
             <Route path='/team' element={<Users/>}/>
             <Route path='/trash' element={<Trash/>}/>

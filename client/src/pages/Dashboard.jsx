@@ -199,7 +199,7 @@ const Dashboard = () => {
     {
       _id: "3",
       label: "TASK IN PROGRESS ",
-      total: totals["in-progress"] || 0,
+      total: totals["in progress"] || 0,
       icon: <LiaEditSolid />,
       bg: "bg-[#f59e0b]",
     },

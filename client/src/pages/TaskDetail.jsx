@@ -78,7 +78,7 @@ const TASKTYPEICON = {
       <MdOutlineDoneAll size={24} />
     </div>
   ),
-  "in-progress": (
+  "in progress": (
     <div className='w-8 h-8 flex items-center justify-center rounded-full bg-violet-600 text-white'>
       <GrInProgress size={16} />
     </div>
@@ -346,7 +346,7 @@ const TaskDetail = () => {
                                     : "bg-amber-50 text-amber-600"
                                 }`}
                               >
-                                {el?.isCompleted ? "done" : "in-progress"}
+                                {el?.isCompleted ? "done" : "in progress"}
                               </span>
                             </div>
                             <p className='text-gray-700 pb-2'>{el?.title}</p>

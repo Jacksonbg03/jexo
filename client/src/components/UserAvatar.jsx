@@ -35,7 +35,7 @@ const UserAvatar = () => {
       <div className=''>
         <Menu as='div' className='relative inline-block text-left'>
           <div>
-            <Menu.Button className='w-10 h-10 2xl:w-12 2xl:h-12 items-center justify-center rounded-full bg-blue-600'>
+            <Menu.Button className='cursor-pointer w-10 h-10 2xl:w-12 2xl:h-12 items-center justify-center rounded-full bg-primary'>
               <span className='text-white font-semibold'>
                 {getInitials(user?.name)}
               </span>
@@ -52,15 +52,26 @@ const UserAvatar = () => {
             leaveTo='transform opacity-0 scale-95'
           >
             <Menu.Items className='absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-black/5 focus:outline-none'>
-              <div className='p-4'>
+              <div className="px-4 py-3">
+                <p className="text-sm font-semibold text-gray-800">
+                  {user?.name}
+                </p>
+                <p className="text-xs text-gray-500">
+                  {user?.email || "User Account"}
+                </p>
+              </div>
+
+              <div className="p-2 space-y-1">
                 <Menu.Item>
                   {({ active }) => (
                     <button
                       onClick={() => setOpen(true)}
-                      className={`text-gray-700  group flex w-full items-center rounded-md px-2 py-2 text-base`}
+                      className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm transition
+                        ${active ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-gray-100"}
+                      `}
                     >
-                      <FaUser className='mr-2' aria-hidden='true' />
-                      Profile
+                      <FaUser className="text-base" />
+                      <span>Profile</span>
                     </button>
                   )}
                 </Menu.Item>
@@ -69,22 +80,28 @@ const UserAvatar = () => {
                   {({ active }) => (
                     <button
                       onClick={() => setOpenPassword(true)}
-                      className={`text-gray-700  group flex w-full items-center rounded-md px-2 py-2 text-base`}
+                      className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm transition
+                        ${active ? "bg-primary/10 text-primary" : "text-gray-700 hover:bg-gray-100"}
+                      `}
                     >
-                      <FaUserLock className='mr-2' aria-hidden='true' />
-                      Change Password
+                      <FaUserLock className="text-base" />
+                      <span>Change Password</span>
                     </button>
                   )}
                 </Menu.Item>
+              </div>
 
+              <div className="p-2">
                 <Menu.Item>
                   {({ active }) => (
                     <button
                       onClick={logoutHandler}
-                      className={`text-red-600 group flex w-full items-center rounded-md px-2 py-2 text-base`}
+                      className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg text-sm font-medium transition
+                        ${active ? "bg-red-50 text-red-700" : "text-red-600 hover:bg-red-50"}
+                      `}
                     >
-                      <IoLogOutOutline className='mr-2' aria-hidden='true' />
-                      Logout
+                      <IoLogOutOutline className="text-lg" />
+                      <span>Logout</span>
                     </button>
                   )}
                 </Menu.Item>
