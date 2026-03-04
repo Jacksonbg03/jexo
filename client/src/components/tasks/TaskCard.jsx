@@ -56,39 +56,42 @@ const TaskCard = ({ task }) => {
             {formatDate(new Date(task?.date))}
           </span>
         </>
-
+        
         <div className='w-full border-t border-gray-200 my-2' />
-        <div className='flex items-center justify-between mb-2'>
-          <TaskAssets
-            activities={task?.activities?.length}
-            subTasks={task?.subTasks}
-            assets={task?.assets?.length}
-          />
+          <Link to={`/task/${task._id}`}>
+            <div className='flex items-center justify-between mb-2'>
+              <TaskAssets
+                activities={task?.activities?.length}
+                subTasks={task?.subTasks}
+                assets={task?.assets?.length}
+              />
 
-          <div className='flex flex-row-reverse'>
-            {task?.team?.length > 0 &&
-              task?.team?.map((m, index) => (
-                <div
-                  key={index}
-                  className={clsx(
-                    "w-7 h-7 rounded-full text-white flex items-center justify-center text-sm -mr-1",
-                    BGS[index % BGS?.length]
-                  )}
-                >
-                  <UserInfo user={m} />
-                </div>
-              ))}
-          </div>
-        </div>
+              <div className='flex flex-row-reverse'>
+                {task?.team?.length > 0 &&
+                  task?.team?.map((m, index) => (
+                    <div
+                      key={index}
+                      className={clsx(
+                        "w-7 h-7 rounded-full text-white flex items-center justify-center text-sm -mr-1",
+                        BGS[index % BGS?.length]
+                      )}
+                    >
+                      <UserInfo user={m} />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </Link>
 
         {/* subtasks */}
+        <Link to={`/task/${task._id}`}>
         {task?.subTasks?.length > 0 ? (
           <div className='py-4 border-t border-gray-200'>
             <h5 className='text-base line-clamp-1 text-black'>
               {task?.subTasks[0].title}
             </h5>
 
-            <div className='p-4 space-x-8'>
+            <div className='space-x-8'>
               <span className='text-sm text-gray-600'>
                 {formatDate(new Date(task?.subTasks[0]?.date))}
               </span>
@@ -104,6 +107,7 @@ const TaskCard = ({ task }) => {
             </div>
           </div>
         )}
+        </Link>
 
         <div className='w-full pb-2'>
           <button

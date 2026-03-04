@@ -83,7 +83,7 @@ const App = () => {
       <div className='w-full min-h-screen bg-[#f3f4f6]'>
         <Routes>
           <Route element={<Layout/>}>
-            <Route path='/' element={<Navigate to='/dashboard' />}/>
+            <Route path='/' element={<Navigate to='/login' />}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/tasks' element={<Tasks/>}/>
             <Route path='/completed/:status' element={<Tasks/>}/>

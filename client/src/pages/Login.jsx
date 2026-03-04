@@ -81,7 +81,7 @@ const Login = () => {
 
                         <span className='text-sm text-gray-500 hover:text-primary-hover hover:underline cursor-pointer'>Forget Password ?</span>
                     </div>
-                    {isLoading ? (<Loading/>) : <Button type='submit' label='Submit' className='w-full h-10 bg-primary text-white rounded-full'/>}
+                    {isLoading ? (<Loading/>) : <Button type='submit' label='Submit' className='w-full h-10 main-button !rounded-full'/>}
                 </form>
             </div>
         </div>

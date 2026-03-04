@@ -24,6 +24,17 @@
   width: 8px !important;
 }
 
+.main-button{
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.main-button:hover{
+  background-color: var(--color-primary-hover);
+}
+
 ::-webkit-scrollbar-thumb{
   background: var(--color-primary) !important;
   display: block !important;
